@@ -9,7 +9,8 @@ RUN apt-get -y update && \
     apt-get -y install git curl && \
     curl -sL "https://deb.nodesource.com/setup_${nodejs_version}.x" | bash && \
     apt-get -y update && \
-    apt-get -y install nodejs
+    apt-get -y install nodejs && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN npm i -g serverless@${serverless_version}
 
